@@ -25,6 +25,7 @@ const RecetasProvider = (props) => {
             obtenerRecetas();
             setConsultar(false);
         }
+        // eslint-disable-next-line
     }, [busqueda]);
 
     return (
