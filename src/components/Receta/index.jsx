@@ -48,8 +48,9 @@ const Receta = ({ receta }) => {
     // Muestra y formate los ingredientes
     const mostrarIngredientes = informacion => {
         let ingredientes = [];
-        for(let i =1; i < 16; i++){
-            if( informacion[`strIngredient${i}`]){
+        for(let i = 1; i < 16; i++){
+            let auxiliar = informacion[`strIngredient${i}`];
+            if( auxiliar ){
                 ingredientes.push(
                     <li key={i}> 
                     { informacion[`strIngredient${i}`] } ( { informacion[`strMeasure${i}`] } )
@@ -61,7 +62,7 @@ const Receta = ({ receta }) => {
     }
 
     const claseBebida = ( clase ) => {
-        if(clase == 'Alcoholic'){
+        if(clase === 'Alcoholic'){
             return <span className="badge badge-danger ml-2">{ clase }</span>
         }
         return <span className="badge badge-success ml-2">{ clase }</span>
